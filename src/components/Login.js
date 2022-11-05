@@ -44,7 +44,7 @@ class LogIn extends Component {
     // Render the login form (and call "handleSubmit" method when "Log In" button is clicked to submit form)
     return (
       <div>
-        <h1>Login</h1>
+        <h1>Login to Ariel's Bank</h1>
         
         <form onSubmit={this.handleSubmit}>
           <div>

@@ -1,15 +1,15 @@
 {
-  "files": {
-    "main.css": "/bank-of-react/static/css/main.e6c13ad2.css",
-    "main.js": "/bank-of-react/static/js/main.2279c013.js",
-    "static/js/787.40bd3877.chunk.js": "/bank-of-react/static/js/787.40bd3877.chunk.js",
-    "index.html": "/bank-of-react/index.html",
-    "main.e6c13ad2.css.map": "/bank-of-react/static/css/main.e6c13ad2.css.map",
-    "main.2279c013.js.map": "/bank-of-react/static/js/main.2279c013.js.map",
-    "787.40bd3877.chunk.js.map": "/bank-of-react/static/js/787.40bd3877.chunk.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.2279c013.js"
-  ]
+  "main.css": "/bank-of-react/static/css/main.24b90f17.chunk.css",
+  "main.js": "/bank-of-react/static/js/main.1c124d7a.chunk.js",
+  "main.js.map": "/bank-of-react/static/js/main.1c124d7a.chunk.js.map",
+  "static/js/1.de53d440.chunk.js": "/bank-of-react/static/js/1.de53d440.chunk.js",
+  "static/js/1.de53d440.chunk.js.map": "/bank-of-react/static/js/1.de53d440.chunk.js.map",
+  "static/js/2.3dba0d12.chunk.js": "/bank-of-react/static/js/2.3dba0d12.chunk.js",
+  "static/js/2.3dba0d12.chunk.js.map": "/bank-of-react/static/js/2.3dba0d12.chunk.js.map",
+  "runtime~main.js": "/bank-of-react/static/js/runtime~main.4de490c2.js",
+  "runtime~main.js.map": "/bank-of-react/static/js/runtime~main.4de490c2.js.map",
+  "static/css/main.24b90f17.chunk.css.map": "/bank-of-react/static/css/main.24b90f17.chunk.css.map",
+  "index.html": "/bank-of-react/index.html",
+  "precache-manifest.aca87b679694c790584b3615dffcc1a6.js": "/bank-of-react/precache-manifest.aca87b679694c790584b3615dffcc1a6.js",
+  "service-worker.js": "/bank-of-react/service-worker.js"
 }

@@ -46,13 +46,28 @@ class App extends Component {
     let newCredits = this.state.credits;
     newCredits.push(credit);
     this.setState({credits: newCredits});
-    let newAccountBalance = this.state.accountBalance;
-    newAccountBalance += credit.amount;
-    this.setState({accountBalance: newAccountBalance});
+
+    let newCreditsTotal = parseFloat(this.state.creditsTotal);
+    newCreditsTotal += parseFloat(credit.amount);
+    this.setState({creditsTotal: newCreditsTotal.toFixed(2)})
+
+    let newAccountBalance = parseFloat(this.state.accountBalance);
+    newAccountBalance += parseFloat(credit.amount);
+    this.setState({accountBalance: newAccountBalance.toFixed(2)});
   }
 
-  addDebit = () => {
-    
+  addDebit = (debit) => {
+    let newDebits = this.state.debits;
+    newDebits.push(debit);
+    this.setState({debits: newDebits});
+
+    let newDebitsTotal = parseFloat(this.state.debitsTotal);
+    newDebitsTotal += parseFloat(debit.amount);
+    this.setState({debitsTotal: newDebitsTotal.toFixed(2)})
+
+    let newAccountBalance = parseFloat(this.state.accountBalance);
+    newAccountBalance -= parseFloat(debit.amount);
+    this.setState({accountBalance: newAccountBalance.toFixed(2)});
   }
 
   sumCredits = () => {
@@ -71,35 +86,22 @@ class App extends Component {
 
   async componentDidMount() {
     let creditsAPI = 'https://moj-api.herokuapp.com/credits';  
+    let debitsAPI = 'https://moj-api.herokuapp.com/debits'
     try { 
       let credits_response = await axios.get(creditsAPI);
-      console.log(credits_response);  
+      let debits_response = await axios.get(debitsAPI);
+      console.log(credits_response, debits_response);  
       this.setState({credits: credits_response.data}); 
+      this.setState({debits: debits_response.data}); 
       this.setState({date: new Date().toISOString()})
       this.sumCredits();
+      this.sumDebits();
       } 
       catch (error) {  
         if (error.credits_response) {
           console.log(error.credits_response.data);  
           console.log(error.credits_response.status);  
         }    
-    }
-  }  
-
-  async componentDidMount() { 
-    let debitsAPI = 'https://moj-api.herokuapp.com/debits'
-    try { 
-      let debits_response = await axios.get(debitsAPI);
-      console.log(debits_response);  
-      this.setState({debits: debits_response.data}); 
-      this.setState({date: new Date().toISOString()})
-      this.sumDebits();
-      } 
-      catch (error) {  
-        if (error.debits_response) {
-          console.log(error.debits_response.data); 
-          console.log(error.debits_response.status);  
-        }      
     }
   }  
 
@@ -118,7 +120,7 @@ class App extends Component {
       <Debits 
         debits={this.state.debits} 
         creditsTotal={this.state.creditsTotal} 
-        debitsTotal={this.state.creditsTotal} 
+        debitsTotal={this.state.debitsTotal} 
         addDebit={this.addDebit} 
         balance={this.state.accountBalance} updateAccountBalance={this.updateAccountBalance} />) 
 
@@ -126,7 +128,7 @@ class App extends Component {
       <Credits 
         credits={this.state.credits} 
         creditsTotal={this.state.creditsTotal} 
-        debitsTotal={this.state.creditsTotal} 
+        debitsTotal={this.state.debitsTotal} 
         addCredit={this.addCredit} 
         balance={this.state.accountBalance} updateAccountBalance={this.updateAccountBalance} />)
 

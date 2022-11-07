@@ -82,7 +82,7 @@ class Credits extends Component {
 
           <h2>Total Debits: {this.props.debitsTotal}</h2>
           <h2>Total Credits: {this.props.creditsTotal}</h2>
-          <h2>Balance = (Debits - Credits)</h2>
+          <h2>Balance = (Credits - Debits)</h2>
           <h2>Your Current Balance: {this.props.balance}</h2>
 
         </div>
